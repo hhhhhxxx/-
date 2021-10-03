@@ -1,0 +1,12 @@
+<!--index.wxml-->
+123
+
+<!-- open-type跳转方式 -->
+<navigator url="/pages/data/data" open-type="switchTab">我是患者(强行访问)</navigator>
+
+<view bindtap="changePatient">我是患者2</view>
+
+<view bindtap="changeDoctor">我是医生2</view>
+
+<!-- <mp-tabbar list="{{list}}" bindchange="changeTab"></mp-tabbar> -->
+<!-- <myTabBar></myTabBar> -->
