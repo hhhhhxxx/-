@@ -1,3 +1,12 @@
-<!--pages/keeper/keeper.wxml-->
-<text>pages/keeper/keeper.wxml</text>
+<view class="keeper-wrap">
+    <navigator url="/pages/data/heartRate/heartRate">
+        <span>数据检测</span>
+    </navigator>
+    <navigator url="/pages/data/stepNumber/stepNumber">
+        <span>日常提醒</span>
+    </navigator>
+    <!-- <navigator url="/pages/data/bloodPressure/bloodPressure">
+        <span>清晨血压</span>
+    </navigator> -->
+</view>
 

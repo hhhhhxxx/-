@@ -1,1 +1,21 @@
-<navigator url="/pages/index/index">回首页</navigator>
+<!-- <navigator url="/pages/index/index">回首页</navigator> -->
+<view class="data-wrap">
+    <navigator url="/pages/data/heartRate/heartRate">
+        <span>心率</span>
+    </navigator>
+    <navigator url="/pages/data/stepNumber/stepNumber">
+        <span>运动步数</span>
+    </navigator>
+    <navigator url="/pages/data/bloodPressure/bloodPressure">
+        <span>清晨血压</span>
+    </navigator>
+    <navigator url="/pages/data/bloodSugar/bloodSugar">
+        <span>空腹血糖</span>
+    </navigator>
+    <navigator url="/pages/data/chart/chart">
+        <span>数据图像</span>
+    </navigator>
+    <navigator url="/pages/data/equipment/equipment">
+        <span>连接设备</span>
+    </navigator>
+</view>

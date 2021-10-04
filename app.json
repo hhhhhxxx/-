@@ -1,41 +1,49 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/logs/logs",
-        "pages/data/data",
-        "pages/keeper/keeper",
-        "pages/info/info",
-        "pages/manage/manage"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Weixin",
-        "navigationBarTextStyle": "black"
-    },
-    "tabBar": {
-        "color": "#7A7E83",
-        "selectedColor": "#3cc51f",
-        "borderStyle": "black",
-        "backgroundColor": "#ffffff",
-        "position": "bottom",
-        "list": [
-            {
-                "pagePath": "pages/data/data"
-            },
-            {
-                "pagePath": "pages/keeper/keeper"
-            },
-            {
-                "pagePath": "pages/info/info"
-            },
-            {
-                "pagePath": "pages/manage/manage"
-            }
-        ]
-    },
-    "sitemapLocation": "sitemap.json",
-    "useExtendedLib": {
-        "weui": true
-    }
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/data/data",
+    "pages/keeper/keeper",
+    "pages/info/info",
+    "pages/manage/manage",
+    "pages/test/test",
+    "pages/data/heartRate/heartRate",
+    "pages/data/stepNumber/stepNumber",
+    "pages/data/bloodPressure/bloodPressure",
+    "pages/data/bloodSugar/bloodSugar",
+    "pages/data/chart/chart",
+    "pages/data/equipment/equipment"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/data/data"
+      },
+      {
+        "pagePath": "pages/keeper/keeper"
+      },
+      {
+        "pagePath": "pages/info/info"
+      },
+      {
+        "pagePath": "pages/manage/manage"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
 }

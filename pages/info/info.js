@@ -1,18 +1,18 @@
 // pages/info/info.js
-Page({
+const app = getApp();
 
+Page({
     /**
      * 页面的初始数据
      */
     data: {
-
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        
     },
 
     /**
@@ -35,7 +35,7 @@ Page({
                     selected: 3,
                     list: app.globalData.tabBarList
                 })
-            } else if(app.globalData.userRole == "doctor") {
+            } else if (app.globalData.userRole == "doctor") {
                 this.getTabBar().setData({
                     selected: 2,
                     list: app.globalData.tabBarList

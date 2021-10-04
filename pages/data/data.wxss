@@ -1,1 +1,21 @@
 /* pages/data/data.wxss */
+.data-wrap {
+  width: 750rpx;
+  float: left;
+}
+.data-wrap navigator {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  height: 300rpx;
+  width: 345rpx;
+  display: inline-block;
+  background-color: aqua;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.data-wrap navigator span {
+  display: block;
+  margin: 20rpx;
+  font-weight: bolder;
+  font-size: 28rpx;
+}

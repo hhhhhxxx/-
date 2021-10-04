@@ -13,14 +13,26 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/keeper/keeper",
+          "pathName": "pages/keeper/keeper",
+          "query": "",
+          "scene": null
+        },
+        {
           "name": "pages/index/index",
           "pathName": "pages/index/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/patient/data/data",
-          "pathName": "pages/patient/data/data",
+          "name": "pages/manage/manage",
+          "pathName": "pages/manage/manage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/info/info",
+          "pathName": "pages/info/info",
           "query": "",
           "scene": null
         }

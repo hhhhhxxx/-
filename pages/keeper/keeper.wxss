@@ -1,1 +1,21 @@
-/* pages/keeper/keeper.wxss */
+/* pages/data/data.wxss */
+.keeper-wrap {
+  width: 750rpx;
+  float: left;
+}
+.keeper-wrap navigator {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  height: 300rpx;
+  width: 710rpx;
+  display: inline-block;
+  background-color: aqua;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.keeper-wrap navigator span {
+  display: block;
+  margin: 40rpx;
+  font-weight: bolder;
+  font-size: 28rpx;
+}
