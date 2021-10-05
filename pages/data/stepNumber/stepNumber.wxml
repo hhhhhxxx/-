@@ -1,2 +1,1 @@
-<!--pages/data/stepNumber/stepNumber.wxml-->
-<text>pages/data/stepNumber/stepNumber.wxml</text>
+<dataInput valueCName="运动步数" valueName="stepNumber"></dataInput>

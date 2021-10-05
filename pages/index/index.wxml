@@ -8,7 +8,6 @@
   <mp-toptips msg="{{errorMsg}}" type="error" show="{{errorMsg}}" delay="1500"></mp-toptips>
   
   <view>慢病管理平台</view>
-
   <mp-form id="form" rules="{{rules}}" models="{{form}}">
     <mp-cells>
       <mp-cell class="form_item" prop="userName" title="姓名">

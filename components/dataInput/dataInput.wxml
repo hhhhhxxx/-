@@ -1,0 +1,21 @@
+<view class="we_form_wrap">
+
+  <mp-toptips msg="{{errorMsg}}" type="error" show="{{errorMsg}}" delay="1500"></mp-toptips>
+  <mp-form id="form" rules="{{rules}}" models="{{form}}">
+    <mp-cells>
+      <mp-cell class="form_item" prop="time" title="时间">
+        <input bindinput="formInputChange" bindfail="tip"
+        value="{{form.userName}}" data-field="time" class="weui-input" placeholder="输入时间"/>
+      </mp-cell>
+            <mp-cell class="form_item" prop="{{valueName}}" title="{{valueCName}}">
+        <input bindinput="formInputChange" bindfail="tip"
+        value="{{form.password}}" data-field="{{valueName}}" class="weui-input" placeholder="输入{{valueCName}}"/>
+      </mp-cell>
+    </mp-cells>
+    <!--提交按钮-->
+    <view class="submit_btn_wrap">
+      <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+    </view>
+  </mp-form>
+</view>
+

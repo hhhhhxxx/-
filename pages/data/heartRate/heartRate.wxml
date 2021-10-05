@@ -1,2 +1,1 @@
-<!--pages/data/heartRate/heartRate.wxml-->
-<text>pages/data/heartRate/heartRate.wxml</text>
+<dataInput valueCName="心率" valueName="heartRate"></dataInput>

@@ -31,6 +31,18 @@
           "scene": null
         },
         {
+          "name": "pages/data/data",
+          "pathName": "pages/data/data",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/data/equipment/equipment",
+          "pathName": "pages/data/equipment/equipment",
+          "query": "",
+          "scene": null
+        },
+        {
           "name": "pages/info/info",
           "pathName": "pages/info/info",
           "query": "",

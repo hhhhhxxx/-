@@ -64,5 +64,7 @@ Page({
     wx.switchTab({
       url: '/pages/manage/manage',
     })
-  } 
+  },
+  onload: function() {
+  }
 })

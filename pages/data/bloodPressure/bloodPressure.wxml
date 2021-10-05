@@ -1,2 +1,1 @@
-<!--pages/data/bloodPressure/bloodPressure.wxml-->
-<text>pages/data/bloodPressure/bloodPressure.wxml</text>
+<dataInput valueCName="血压" valueName="bloodPressure"></dataInput>
