@@ -1,1 +1,8 @@
-<mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+
+
+<block wx:if="{{userRole === 'patient'}}">
+    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+</block>
+<block wx:if="{{userRole === 'doctor'}}">
+    
+</block>

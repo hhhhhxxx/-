@@ -47,6 +47,12 @@
           "pathName": "pages/info/info",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/info/updateInfo/updateInfo",
+          "pathName": "pages/info/updateInfo/updateInfo",
+          "query": "",
+          "scene": null
         }
       ]
     }

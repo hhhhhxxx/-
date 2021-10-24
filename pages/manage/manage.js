@@ -27,6 +27,11 @@ Page({
         this.setData({
             search: this.search.bind(this)
         })
+        
+        const app = getApp();
+        this.setData({
+            userRole:  app.globalData.userRole
+        })
     },
 
     /**

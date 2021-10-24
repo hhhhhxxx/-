@@ -29,3 +29,5 @@
 
 <button bindtap="changePatient">我是患者2</button>
 <button bindtap="changeDoctor">我是医生2</button>
+
+<button bindtap="changeHello">hello</button>

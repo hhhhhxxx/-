@@ -8,9 +8,11 @@ App({
         // logs.unshift(Date.now())
         // wx.setStorageSync('logs', logs)
         // 默认登录
+        const loginSession = wx.getStorageSync('loginSession') || '123'
+        wx.setStorageSync('loginSession', loginSession)
         this.globalData.tabBarList = patientTabBar
         this.globalData.userRole = "patient"
-        console.log(patientTabBar)
+        // console.log(patientTabBar)
 
         // 登录
         wx.login({

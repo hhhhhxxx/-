@@ -1,4 +1,5 @@
-<view class="keeper-wrap">
+<block wx:if="{{userRole === 'patient'}}">
+    <view class="keeper-wrap">
     <navigator url="/pages/data/heartRate/heartRate">
         <span>数据检测</span>
     </navigator>
@@ -8,5 +9,10 @@
     <!-- <navigator url="/pages/data/bloodPressure/bloodPressure">
         <span>清晨血压</span>
     </navigator> -->
-</view>
+</view>    
+</block>
+
+<block wx:if="{{userRole === 'doctor'}}">
+    
+</block>
 

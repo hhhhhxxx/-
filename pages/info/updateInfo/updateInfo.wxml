@@ -1,0 +1,29 @@
+<mp-form id="form" rules="{{rules}}" models="{{form}}">
+    <mp-cells>
+        <mp-cell class="form_item" prop="userName" title="姓名">
+            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="password" title="密码">
+            <input bindinput="formInputChange" bindfail="tip" value="{{form.password}}" data-field="password" class="weui-input" placeholder="输入密码" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="userName" title="姓名">
+            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="userName" title="姓名">
+            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="userName" title="姓名">
+            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="userName" title="姓名">
+            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="userName" title="姓名">
+            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
+        </mp-cell>
+    </mp-cells>
+    <!-- 提交按钮 -->
+    <view class="submit_btn_wrap">
+        <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+    </view>
+</mp-form>

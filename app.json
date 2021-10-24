@@ -12,7 +12,8 @@
     "pages/data/bloodPressure/bloodPressure",
     "pages/data/bloodSugar/bloodSugar",
     "pages/data/chart/chart",
-    "pages/data/equipment/equipment"
+    "pages/data/equipment/equipment",
+    "pages/info/updateInfo/updateInfo"
   ],
   "window": {
     "enablePullDownRefresh": true,
