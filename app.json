@@ -1,11 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index/register/register",
     "pages/logs/logs",
     "pages/data/data",
     "pages/keeper/keeper",
     "pages/info/info",
     "pages/manage/manage",
+    "pages/manage/info/info",
     "pages/test/test",
     "pages/data/heartRate/heartRate",
     "pages/data/stepNumber/stepNumber",
@@ -13,7 +15,8 @@
     "pages/data/bloodSugar/bloodSugar",
     "pages/data/chart/chart",
     "pages/data/equipment/equipment",
-    "pages/info/updateInfo/updateInfo"
+    "pages/info/updateInfo/updateInfo",
+    "pages/info/myInfo/myInfo"
   ],
   "window": {
     "enablePullDownRefresh": true,
@@ -37,10 +40,10 @@
         "pagePath": "pages/keeper/keeper"
       },
       {
-        "pagePath": "pages/info/info"
+        "pagePath": "pages/manage/manage"
       },
       {
-        "pagePath": "pages/manage/manage"
+        "pagePath": "pages/info/info"
       }
     ]
   },

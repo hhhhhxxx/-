@@ -1,32 +1,57 @@
 page {
-    background-color: #f9f9f9;
-  }
-  
-.submit_btn_wrap {
-    margin-top: 20rpx;
-    width: 100%;
-
-    button {
-      display: block;
-      font-weight: normal;
-      width: 100% !important;
-    }
+	background-color: #f9f9f9;
 }
-  /*=========================weui==========================*/
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--themeColor);
+	.title {
+		color: #fff;
+		font-size: 50rpx;
+		margin-bottom: 50rpx;
+	}
+	.logo {
+		margin: 80rpx 0 30rpx 0;
+		width: 200rpx;
+	}
+}
+
+.submit_btn_wrap {
+	margin-top: 20rpx;
+	width: 100%;
+
+	button {
+		display: block;
+		font-weight: normal;
+		// width: 100% !important;
+	}
+	.submitBtn {
+		width: 300rpx !important;
+		background-color: var(--themeColor);
+	}
+	.regBtn {
+        margin-top: 10rpx;
+		width: 300rpx !important;
+        border-color: #ddd;
+	}
+}
+/*=========================weui==========================*/
 
 .we_form_wrap {
-    margin: 0 20rpx !important;
-    .form_item {
-      display: flex;
-      color: #666666;
-      font-size: 28rpx;
-    }
+	// margin: 0 20rpx !important;
+	.form_item {
+		display: flex;
+		color: #666666;
+		font-size: 28rpx;
+	}
 
-    .cell--weui-cell {
-      width: 100%;
-    }
-  
-    .weui-label {
-      width: 136rpx;
-    }
-  }
+	.cell--weui-cell {
+		width: 100%;
+	}
+
+	.weui-label {
+		width: 136rpx;
+	}
+}

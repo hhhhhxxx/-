@@ -53,6 +53,30 @@
           "pathName": "pages/info/updateInfo/updateInfo",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/info/updateInfo/updateInfo",
+          "pathName": "pages/info/updateInfo/updateInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/info/myInfo/myInfo",
+          "pathName": "pages/info/myInfo/myInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/register/register",
+          "pathName": "pages/index/register/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/manage/manage",
+          "pathName": "pages/manage/manage",
+          "query": "",
+          "scene": null
         }
       ]
     }

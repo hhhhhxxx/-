@@ -7,11 +7,23 @@ App({
         // const logs = wx.getStorageSync('logs') || []
         // logs.unshift(Date.now())
         // wx.setStorageSync('logs', logs)
+        
         // 默认登录
-        const loginSession = wx.getStorageSync('loginSession') || '123'
-        wx.setStorageSync('loginSession', loginSession)
-        this.globalData.tabBarList = patientTabBar
-        this.globalData.userRole = "patient"
+        const sessionId = wx.getStorageSync('sessionId') || ''
+        const user = wx.getStorageSync('user') || ''
+        const roleInfo = wx.getStorageSync('roleInfo') || ''
+
+        if(sessionId != '' && user != '' && roleInfo != '') {
+            if(user.roleId == 1) {
+                this.globalData.tabBarList = patientTabBar
+                this.globalData.userRole = "patient"
+            } else {
+                this.globalData.tabBarList = doctorTabBar
+                this.globalData.userRole = "doctor"
+            }
+        }
+        
+
         // console.log(patientTabBar)
 
         // 登录
@@ -23,7 +35,7 @@ App({
         })
     },
     globalData: {
-        userRole: "patient",
+        userRole: "",
         tabBarList: [], // tabBar
     }
 })

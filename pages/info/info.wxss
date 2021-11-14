@@ -1,24 +1,23 @@
-.bg {
-  height: 150px;
-  background-color: var(--themeColor);
-}
 .bg .head {
+  height: 200px;
+  background-color: var(--themeColor);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bg .head .username {
+  color: #eee;
+  font-size: 20px;
 }
 .bg .head .headIcon {
-  display: flex;
-  justify-content: center;
+  margin: 10rpx;
 }
-.bg .head .login {
-  display: flex;
-  color: #fff;
-  font-size: 15px;
-  margin-top: 15rpx;
-  justify-content: center;
-}
-.bg .head .head image {
+.bg .head .headIcon image {
+  width: 200rpx;
   border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .item {
   display: flex;

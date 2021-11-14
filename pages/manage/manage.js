@@ -1,37 +1,56 @@
-// pages/manage/manage.js
+import { getRequest, postRequest } from '../../request/index.js'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        inputShowed: false,
-        inputVal: ""
+        doctorList: [],
+        patientList: []
     },  
 
-    search: function (value) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve([{text: '医生1', value: 1}, {text: '医生2', value: 2}])
-            }, 200)
+
+    searchDoctorList(e) {
+        console.log(e.detail.inputText)
+
+        getRequest('/doctor/getByName',{
+          name:  e.detail.inputText == undefined ? '' : e.detail.inputText
+        }).then(res=>{
+            this.setData({
+                doctorList: res.data.data.doctorList
+            })
         })
-    },
-    selectResult: function (e) {
-        console.log('select result', e.detail)
+
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setData({
-            search: this.search.bind(this)
-        })
         
         const app = getApp();
         this.setData({
             userRole:  app.globalData.userRole
         })
+
+        getRequest('/doctor/getByName',{
+            name:  ''
+          }).then(res=>{
+              this.setData({
+                  doctorList: res.data.data.doctorList
+              })
+          })
+    },
+
+    toDoctorInfo(e) {
+        let doctorInfo = e.currentTarget.dataset.item;
+
+        // console.log( doctorInfo)
+
+        wx.navigateTo({
+            url: `/pages/manage/info/info?doctorInfo=${JSON.stringify(doctorInfo)}`
+        });
+        // url="/pages/manage/info/info?doctorInfo={{JSON.stringify(item)}}"
     },
 
     /**

@@ -1,0 +1,9 @@
+<view class="search_input">
+    <!-- <navigator url="/pages/search/index" open-type="navigate">搜索</navigator> -->
+
+    <view class="inputWarp">
+        <input class="inputText" type="text" placeholder="输入名字" value="{{inputText}}" 
+        bindinput="handleInputChange" data-modal='inputText'/>
+    </view>
+    <view class="button" bindtap="search">搜索</view>
+</view>

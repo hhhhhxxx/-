@@ -1,0 +1,88 @@
+<mp-toptips msg="{{errorMsg}}" type="error" show="{{errorMsg}}" delay="1500"></mp-toptips>
+<view>
+    <view class="header">
+        <text class="patient" bindtap="changeRole"  data-role="1" >我是患者</text>
+        <switch type="switch" checked="{{show}}" bindchange="changeSwitch" />
+        <text class="doctor" bindtap="changeRole" data-role="2">我是医生</text>
+    </view>
+    <view hidden="{{show}}">
+        <mp-form id="patientForm" rules="{{patientRules}}" models="{{patientForm}}">
+            <mp-cells>
+                <mp-cell class="form_item" prop="username" title="用户名">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{patientForm.username}}" data-field="username" class="weui-input" placeholder="输入用户名" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="password" title="密码">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{patientForm.password}}" data-field="password" class="weui-input" placeholder="输入密码" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="name" title="姓名：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{patientForm.name}}" data-field="name" class="weui-input" placeholder="输入姓名" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="age" title="年龄：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{patientForm.age}}" data-field="age" class="weui-input" placeholder="输入年龄" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="sex" title="性别：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{patientForm.sex}}" data-field="sex" class="weui-input" placeholder="输入性别" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="phone" title="手机号：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{patientForm.phone}}" data-field="phone" class="weui-input" placeholder="输入手机号" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="address" title="住址：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{patientForm.address}}" data-field="address" class="weui-input" placeholder="输入住址" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="history" title="病史：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{patientForm.history}}" data-field="history" class="weui-input" placeholder="输入病史" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="allergy" title="过敏史：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{patientForm.allergy}}" data-field="allergy" class="weui-input" placeholder="输入过敏史" />
+                </mp-cell>
+            </mp-cells>
+            <!-- 提交按钮 -->
+        </mp-form>
+    </view>
+    <view hidden="{{!show}}">
+        <mp-form id="doctorForm" rules="{{doctorRules}}" models="{{doctorForm}}">
+            <mp-cells>
+                <mp-cell class="form_item" prop="username" title="用户名">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{doctorForm.username}}" data-field="username" class="weui-input" placeholder="输入用户名" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="password" title="密码">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{doctorForm.password}}" data-field="password" class="weui-input" placeholder="输入密码" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="name" title="姓名：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{doctorForm.name}}" data-field="name" class="weui-input" placeholder="输入姓名" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="age" title="年龄：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{doctorForm.age}}" data-field="age" class="weui-input" placeholder="输入年龄" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="sex" title="性别：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{doctorForm.sex}}" data-field="sex" class="weui-input" placeholder="输入性别" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="phone" title="手机号：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{doctorForm.phone}}" data-field="phone" class="weui-input" placeholder="输入手机号" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="room" title="科室：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{doctorForm.room}}" data-field="room" class="weui-input" placeholder="输入科室" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="jobYear" title="医龄：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{doctorForm.jobYear}}" data-field="jobYear" class="weui-input" placeholder="输入医龄" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="position" title="职位：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{doctorForm.position}}" data-field="position" class="weui-input" placeholder="输入职位" />
+                </mp-cell>
+                <mp-cell class="form_item" prop="hospital" title="单位：">
+                    <input bindinput="formInputChange" bindfail="tip" value="{{doctorForm.hospital}}" data-field="hospital" class="weui-input" placeholder="输入过敏史" />
+                </mp-cell>
+            </mp-cells>
+            <!-- 提交按钮 -->
+        </mp-form>
+    </view>
+    <view class="submit_btn_wrap">
+        <button class="weui-btn" type="primary" bindtap="submitForm">提交</button>
+    </view>
+    <button class="weui-btn" type="default" bindtap="clearForm">重置</button>
+    <navigator url="/pages/index/index">
+        <button class="weui-btn" type="default">返回</button>
+    </navigator>
+
+    
+</view>

@@ -1,0 +1,38 @@
+<view class="infoList">
+    <view class="line"></view>
+    <view class='item'>
+        <view class="title">姓名：</view>
+        <view class="value">{{patientInfo.name}}</view>
+    </view>
+    <view class="line"></view>
+    <view class='item'>
+        <view class="title">年龄：</view>
+        <view class="value">{{patientInfo.age}}</view>
+    </view>
+    <view class="line"></view>
+    <view class='item'>
+        <view class="title">性别：</view>
+        <view class="value">{{patientInfo.sex}}</view>
+    </view>
+    <view class="line"></view>
+    <view class='item'>
+        <view class="title">手机号：</view>
+        <view class="value">{{patientInfo.phone}}</view>
+    </view>
+    <view class="line"></view>
+    <view class='item'>
+        <view class="title">住址：</view>
+        <view class="value">{{patientInfo.address}}</view>
+    </view>
+    <view class="line"></view>
+    <view class='item'>
+        <view class="title">病史：</view>
+        <view class="value">{{patientInfo.history}}</view>
+    </view>
+    <view class="line"></view>
+    <view class='item'>
+        <view class="title">过敏史：</view>
+        <view class="value">{{patientInfo.allergy}}</view>
+    </view>
+    <view class="line"></view>
+</view>

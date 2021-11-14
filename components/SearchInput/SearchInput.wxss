@@ -1,0 +1,25 @@
+.search_input {
+  height: 70rpx;
+  padding: 15rpx;
+  background-color: #ededed;
+  display: flex;
+}
+.search_input .inputWarp {
+  width: 85%;
+  height: 50rpx;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10rpx;
+}
+.search_input .inputWarp .inputText {
+  height: 50rpx;
+  display: block;
+}
+.search_input .button {
+  text-align: center;
+  margin-left: 15rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 15%;
+  border-radius: 5px;
+}

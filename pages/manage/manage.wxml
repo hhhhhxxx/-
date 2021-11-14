@@ -1,8 +1,20 @@
-
-
 <block wx:if="{{userRole === 'patient'}}">
-    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+    <SearchInput bind:search="searchDoctorList"></SearchInput>
+    <view>
+        <view wx:for="{{doctorList}}" wx:key="index">
+            <view bind:tap="toDoctorInfo" data-item="{{item}}">
+                <view class="row">
+                <view class="name">{{item.name}}</view>
+                <view class="room">{{item.room}}</view>
+                <image class="raw" src="/icons/raw.png" mode="widthFix"/>
+            </view>
+            <view class="line"></view>
+            </view>
+        </view>
+    </view>
+
 </block>
 <block wx:if="{{userRole === 'doctor'}}">
-    
+   <SearchInput></SearchInput>
 </block>
+<!-- <doctorInfo></doctorInfo> -->

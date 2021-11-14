@@ -1,5 +1,6 @@
 // 公共url
 const baseUrl = "http://localhost:8080"
+// const baseUrl = "http://yixin.free.idcfengye.com"
 
 export const request = (url, params, header, method = 'get') => {
 

@@ -1,4 +1,6 @@
 /**app.wxss**/
+/* @import "./style/iconfont.wxss"; */
+
 .container {
   height: 100%;
   display: flex;
@@ -9,7 +11,14 @@
   box-sizing: border-box;
 } 
 
+page,view,text,swiper,swiper-item,image,navigator {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+
 page{
-  --themeColor: #4fa3d3;
+  --otherColor: #4fa3d3;
+  --themeColor: #00b0f0;
   font-size: 28rpx;
 }

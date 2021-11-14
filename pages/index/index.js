@@ -8,13 +8,13 @@ const app = getApp()
 Page({
     data: {
         form: {
-            userName: 'hhhhhx',
+            username: 'hhhhhx',
             password: '123123',
         },
         errorMsg: '', // 验证表单显示错误信息
         rules: [
             {
-                name: 'userName',
+                name: 'username',
                 rules: [{ required: true, message: '请填写用户名' }, { minlength: 3, message: '太短' }]
             },
             {
@@ -32,7 +32,7 @@ Page({
     },
 
     submitForm () {
-        const { userName, password } = this.data.form
+        const { username, password } = this.data.form
         this.selectComponent('#form').validate((valid, errors) => {
             if (!valid) {
                 const firstError = Object.keys(errors)
@@ -45,14 +45,17 @@ Page({
                 // 清除历史的sessionId
                 wx.removeStorageSync('sessionId')
                 wx.removeStorageSync('user')
+                wx.removeStorageSync('roleInfo')
                 // 登录请求
                 postRequest('/login',{
-                        username: userName,
+                        username: username,
                         password: password
                     }).then(res => {
                         
                         wx.setStorageSync("sessionId", res.data.data.sessionId);
                         wx.setStorageSync("user", res.data.data.user);
+                        wx.setStorageSync("roleInfo", res.data.data.roleInfo);
+
                         wx.showToast({
                             title: '登录',
                         })
@@ -88,18 +91,13 @@ Page({
             url: '/pages/manage/manage',
         })
     },
-    changeHello () {
-        getRequest('/hello',{}).catch((res) => {
-            console.log(res);
-        })
-    },
 
     onload: function () {
 
     },
     onReady: function () {
-        wx.removeStorageSync('sessionId')
-        wx.removeStorageSync('user')
+        // wx.removeStorageSync('sessionId')
+        // wx.removeStorageSync('user')
         // console.log(1223)
     },
 })

@@ -1,29 +1,72 @@
-<mp-form id="form" rules="{{rules}}" models="{{form}}">
-    <mp-cells>
-        <mp-cell class="form_item" prop="userName" title="姓名">
-            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
-        </mp-cell>
-        <mp-cell class="form_item" prop="password" title="密码">
-            <input bindinput="formInputChange" bindfail="tip" value="{{form.password}}" data-field="password" class="weui-input" placeholder="输入密码" />
-        </mp-cell>
-        <mp-cell class="form_item" prop="userName" title="姓名">
-            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
-        </mp-cell>
-        <mp-cell class="form_item" prop="userName" title="姓名">
-            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
-        </mp-cell>
-        <mp-cell class="form_item" prop="userName" title="姓名">
-            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
-        </mp-cell>
-        <mp-cell class="form_item" prop="userName" title="姓名">
-            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
-        </mp-cell>
-        <mp-cell class="form_item" prop="userName" title="姓名">
-            <input bindinput="formInputChange" bindfail="tip" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="输入用户名" />
-        </mp-cell>
-    </mp-cells>
-    <!-- 提交按钮 -->
-    <view class="submit_btn_wrap">
-        <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
-    </view>
-</mp-form>
+<mp-toptips msg="{{errorMsg}}" type="error" show="{{errorMsg}}" delay="1500"></mp-toptips>
+<block wx:if="{{userRole == 'patient'}}">
+    <mp-form id="form" rules="{{patientRules}}" models="{{roleForm}}">
+        <mp-cells>
+            <mp-cell class="form_item" prop="name" title="姓名：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.name}}" data-field="name" class="weui-input" placeholder="输入姓名" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="age" title="年龄：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.age}}" data-field="age" class="weui-input" placeholder="输入年龄" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="sex" title="性别：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.sex}}" data-field="sex" class="weui-input" placeholder="输入性别" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="phone" title="手机号：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.phone}}" data-field="phone" class="weui-input" placeholder="输入手机号" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="address" title="住址：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.address}}" data-field="address" class="weui-input" placeholder="输入住址" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="history" title="病史：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.history}}" data-field="history" class="weui-input" placeholder="输入病史" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="allergy" title="过敏史：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.allergy}}" data-field="allergy" class="weui-input" placeholder="输入过敏史" />
+            </mp-cell>
+        </mp-cells>
+        <!-- 提交按钮 -->
+        <view class="submit_btn_wrap">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </mp-form>
+    <navigator url="/pages/info/myInfo/myInfo">
+        <button class="weui-btn" type="default">返回</button>
+    </navigator>
+</block>
+<block wx:elif="{{userRole == 'doctor'}}">
+    <mp-form id="form" rules="{{doctorRules}}" models="{{roleForm}}">
+        <mp-cells>
+            <mp-cell class="form_item" prop="name" title="姓名：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.name}}" data-field="name" class="weui-input" placeholder="输入姓名" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="age" title="年龄：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.age}}" data-field="age" class="weui-input" placeholder="输入年龄" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="sex" title="性别：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.sex}}" data-field="sex" class="weui-input" placeholder="输入性别" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="phone" title="手机号：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.phone}}" data-field="phone" class="weui-input" placeholder="输入手机号" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="room" title="科室：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.room}}" data-field="room" class="weui-input" placeholder="输入科室" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="jobYear" title="医龄：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.jobYear}}" data-field="jobYear" class="weui-input" placeholder="输入医龄" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="position" title="职位：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.position}}" data-field="position" class="weui-input" placeholder="输入" />
+            </mp-cell>
+            <mp-cell class="form_item" prop="hospital" title="单位：">
+                <input bindinput="formInputChange" bindfail="tip" value="{{roleForm.hospital}}" data-field="hospital" class="weui-input" placeholder="输入过敏史" />
+            </mp-cell>
+        </mp-cells>
+        <!-- 提交按钮 -->
+        <view class="submit_btn_wrap">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </mp-form>
+    <navigator url="/pages/info/myInfo/myInfo">
+        <button class="weui-btn" type="default">返回</button>
+    </navigator>
+</block>

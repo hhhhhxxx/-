@@ -1,16 +1,37 @@
-// pages/info/updateInfo/updateInfo.js
+// pages/index/register/register.js
 import { getRequest, postRequest } from '../../../request/index.js'
-
-const app = getApp();
-
 Page({
+
     /**
      * 页面的初始数据
      */
     data: {
-        userRole: '',
-        roleForm: {
-
+        //   false为患者 true为医生
+        show: false,
+        patientForm: {
+            username: '',
+            password: '',
+            roleId: 1,
+            name: '',
+            age: '',
+            sex: '',
+            phone: '',
+            address: '',
+            history: '',
+            allergy: '',
+        },
+        doctorForm: {
+            username: '',
+            password: '',
+            roleId: 2,
+            name: '',
+            age: '',
+            sex: '',
+            phone: '',
+            room: '',
+            jobYear: '',
+            position: '',
+            hospital: ''
         },
         errorMsg: '', // 验证表单显示错误信息
         patientRules: [
@@ -79,16 +100,83 @@ Page({
         ]
     },
 
-    formInputChange (e) {
-        const { field } = e.currentTarget.dataset
-        this.setData({
-            [`roleForm.${field}`]: e.detail.value
-        })
+    clearForm () {
+        if (this.data.show == false) {
+            this.setData({
+                patientForm: {
+                    username: '',
+                    password: '',
+                    roleId: 1,
+                    name: '',
+                    age: '',
+                    sex: '',
+                    phone: '',
+                    address: '',
+                    history: '',
+                    allergy: '',
+                }
+            })
+        } else {
+            this.setData({
+                doctorForm: {
+                    username: '',
+                    password: '',
+                    roleId: 2,
+                    name: '',
+                    age: '',
+                    sex: '',
+                    phone: '',
+                    room: '',
+                    jobYear: '',
+                    position: '',
+                    hospital: ''
+                }
+            })
+        }
     },
 
-    submitForm () {
+    changeSwitch (e) {
 
-        this.selectComponent('#form').validate((valid, errors) => {
+        if (this.data.show == true) {
+            this.setData({
+                // 变成患者
+                show: !this.data.show,
+            })
+        } else {
+            this.setData({
+                // 变成医生
+                show: !this.data.show,
+
+            })
+        }
+    },
+
+    changeRole(e) {
+        const { role } = e.currentTarget.dataset
+        if(role == 1) {
+            this.setData({
+                // 变成患者
+                show: false,
+            })
+        } else {
+            this.setData({
+                // 变成医生
+                show: true,
+
+            })
+        }
+    },
+
+    formInputChange (e) {
+        let formName = this.data.show == false ? 'patientForm' : 'doctorForm'
+        const { field } = e.currentTarget.dataset
+        this.setData({
+            [`${formName}.${field}`]: e.detail.value
+        })
+    },
+    submitForm () {
+        let formName = this.data.show == false ? 'patientForm' : 'doctorForm'
+        this.selectComponent(`#${formName}`).validate((valid, errors) => {
             if (!valid) {
                 const firstError = Object.keys(errors)
                 if (firstError.length) {
@@ -97,36 +185,38 @@ Page({
                     })
                 }
             } else {
-
-                if (this.data.userRole == 'patient') {
-
-                    postRequest('/patient/update', this.data.roleForm)
+                // console.log(this.data.roleForm);
+                if (this.data.show == false) {
+                    console.log(this.data.patientForm);
+                    postRequest('/register/patient', this.data.patientForm)
                         .then(res => {
                             wx.setStorageSync('roleInfo', res.data.data.patient);
 
-                            wx.navigateTo({
-                                url: '/pages/info/myInfo/myInfo',
-                            });
-                        })
-                } else if (this.data.userRole == 'doctor') {
-                    postRequest('/doctor/update', this.data.roleForm)
-                        .then(res => {
-                            wx.setStorageSync('roleInfo', res.data.data.doctor);
-
-                            // wx.navigateTo({
-                            //     url: '/pages/info/myInfo/myInfo',
-                            // });
+                            wx.showToast({
+                                title: '注册成功'
+                            })
                             wx.redirectTo({
-                                url: '/pages/info/myInfo/myInfo',
-
+                                url: '/pages/index/index',
                             });
-                            // wx.navigateBack({
-                            //     delta: 1//默认值是1，返回的页面数，如果 delta 大于现有页面数，则返回到首页。
-                            // })
                         }).catch(res => {
                             wx.redirectTo({
-                                url: '/pages/info/myInfo/myInfo',
-
+                                url: '/pages/index/index',
+                            });
+                        })
+                } else {
+                    console.log(this.data.doctorForm)
+                    postRequest('/register/doctor', this.data.doctorForm)
+                        .then(res => {
+                            wx.setStorageSync('roleInfo', res.data.data.doctor);
+                            wx.showToast({
+                                title: '注册成功'
+                            })
+                            wx.redirectTo({
+                                url: '/pages/index/index',
+                            });
+                        }).catch(res => {
+                            wx.redirectTo({
+                                url: '/pages/index/index',
                             });
                         })
                 }
@@ -134,18 +224,16 @@ Page({
         })
     },
 
+
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         this.setData({
-            userRole: app.globalData.userRole,
-            roleForm: {
-                ...wx.getStorageSync("roleInfo")
-            }
+            roleForm: this.data.patientForm
         })
     },
-
 
     /**
      * 生命周期函数--监听页面初次渲染完成

@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header text {
+  font-size: 30rpx;
+  font-weight: bolder;
+  padding: 30rpx;
+}
+.we_form_wrap .form_item {
+  display: flex;
+  color: #666666;
+  font-size: 28rpx;
+}
+.we_form_wrap .cell--weui-cell {
+  width: 100%;
+}
+.we_form_wrap .weui-label {
+  width: 136rpx;
+}
+button {
+  margin-top: 10rpx;
+}
