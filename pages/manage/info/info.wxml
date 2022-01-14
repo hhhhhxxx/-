@@ -1,1 +1,14 @@
-<doctorInfo doctorInfo="{{doctorInfo}}"></doctorInfo>
+<block wx:if="{{userRole == 1}}">
+    <doctorInfo doctorInfo="{{doctorInfo}}"></doctorInfo>
+    <block wx:if="{{isConnect}}">
+        <button class="blueBtn" type="primary">已绑定</button>
+        <button type="default" bindtap="cancel">解除绑定</button>
+    </block>
+    <block wx:elif="{{!isConnect}}">
+        <button class="blueBtn" type="primary" bind:tap="apply">申请绑定</button>
+    </block>
+</block>
+
+<block wx:if="{{userRole == 2}}">
+    <patientInfo patientInfo="{{patientInfo}}"></patientInfo>
+</block>

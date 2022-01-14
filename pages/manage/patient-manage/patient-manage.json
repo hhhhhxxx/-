@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "SearchInput": "/components/SearchInput/SearchInput",
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar"
+  }
+  
+}

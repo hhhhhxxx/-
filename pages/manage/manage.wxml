@@ -1,20 +1,7 @@
-<block wx:if="{{userRole === 'patient'}}">
-    <SearchInput bind:search="searchDoctorList"></SearchInput>
-    <view>
-        <view wx:for="{{doctorList}}" wx:key="index">
-            <view bind:tap="toDoctorInfo" data-item="{{item}}">
-                <view class="row">
-                <view class="name">{{item.name}}</view>
-                <view class="room">{{item.room}}</view>
-                <image class="raw" src="/icons/raw.png" mode="widthFix"/>
-            </view>
-            <view class="line"></view>
-            </view>
-        </view>
-    </view>
-
+<block wx:if="{{userRole == 1}}">
+    <patient-manage patientId="{{id}}"></patient-manage>
 </block>
-<block wx:if="{{userRole === 'doctor'}}">
-   <SearchInput></SearchInput>
+<block wx:if="{{userRole == 2}}">
+    <doctor-manage doctorId="{{id}}"></doctor-manage>
 </block>
 <!-- <doctorInfo></doctorInfo> -->

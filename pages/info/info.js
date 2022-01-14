@@ -15,6 +15,8 @@ Page({
         wx.removeStorageSync('sessionId')
         wx.removeStorageSync('user')
         wx.removeStorageSync('roleInfo')
+        app.globalData.tabBarList = ''
+        app.globalData.userRole = ''
     },
     onReady: function () {
         // wx.removeStorageSync('sessionId')
@@ -27,21 +29,17 @@ Page({
         })
     },
     onShow: function () {
-        if (typeof this.getTabBar === 'function' &&
-            this.getTabBar()) {
 
-            const app = getApp();
-            if (app.globalData.userRole == "patient") {
+        this.setData({
+            userRole: app.globalData.userRole,
+        })
+
+        if (typeof this.getTabBar === 'function' && 
+            this.getTabBar()) {
                 this.getTabBar().setData({
                     selected: 3,
                     list: app.globalData.tabBarList
                 })
-            } else if(app.globalData.userRole == "doctor") {
-                this.getTabBar().setData({
-                    selected: 2,
-                    list: app.globalData.tabBarList
-                })
-            }
         }
     }
 })

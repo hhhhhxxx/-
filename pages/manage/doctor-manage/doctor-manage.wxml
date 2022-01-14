@@ -1,0 +1,24 @@
+<view class="container">
+    <!-- <SearchInput></SearchInput> -->
+    <navigator url="/pages/manage/doctor-manage/apply/apply">
+        <button class="button" type="default">患者申请</button>
+    </navigator>
+    <view class="tip">我的患者</view>
+    <view>
+        <view wx:for="{{myPatientList}}" wx:key="index">
+            <view bind:tap="toPatientInfo" data-item="{{item}}">
+                <view class="line"></view>
+                <view class="row">
+                    <image class="head" src="/pic/head.jpg" mode="widthFix" />
+                    <view class="text">
+                        <view class="name">{{item.name}}</view>
+                        <view class="intro">{{item.history}}</view>
+                    </view>
+                    <!-- <view class="room">{{item.sex}}</view> -->
+                    <image class="raw" src="/icons/raw.png" mode="widthFix" />
+                </view>
+            </view>
+        </view>
+        <view class="hr"></view>
+    </view>
+</view>

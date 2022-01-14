@@ -1,43 +1,42 @@
 <view class="infoList">
-    <view class="line"></view>
+    <view class="hr"></view>
     <view class='item'>
-        <view class="title">姓名：</view>
+        <view class="title">姓名</view>
         <view class="value">{{doctorInfo.name}}</view>
     </view>
     <view class="line"></view>
     <view class='item'>
-        <view class="title">年龄：</view>
+        <view class="title">年龄</view>
         <view class="value">{{doctorInfo.age}}</view>
     </view>
     <view class="line"></view>
     <view class='item'>
-        <view class="title">性别：</view>
+        <view class="title">性别</view>
         <view class="value">{{doctorInfo.sex}}</view>
     </view>
     <view class="line"></view>
     <view class='item'>
-        <view class="title">手机号：</view>
+        <view class="title">手机号</view>
         <view class="value">{{doctorInfo.phone}}</view>
     </view>
-    <view class="line"></view>
+    <view class="hr"></view>
     <view class='item'>
-        <view class="title">科室：</view>
+        <view class="title">科室</view>
         <view class="value">{{doctorInfo.room}}</view>
     </view>
     <view class="line"></view>
     <view class='item'>
-        <view class="title">医龄：</view>
+        <view class="title">医龄</view>
         <view class="value">{{doctorInfo.jobYear}}</view>
     </view>
     <view class="line"></view>
     <view class='item'>
-        <view class="title">职位：</view>
+        <view class="title">职位</view>
         <view class="value">{{doctorInfo.position}}</view>
     </view>
     <view class="line"></view>
     <view class='item'>
-        <view class="title">单位：</view>
+        <view class="title">单位</view>
         <view class="value">{{doctorInfo.hospital}}</view>
     </view>
-    <view class="line"></view>
 </view>

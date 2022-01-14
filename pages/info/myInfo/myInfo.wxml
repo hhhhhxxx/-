@@ -1,88 +1,9 @@
 <view class="outer">
-    <block wx:if="{{userRole == 'patient'}}">
-        <view class="infoList">
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">姓名：</view>
-                <view class="value">{{roleInfo.name}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">年龄：</view>
-                <view class="value">{{roleInfo.age}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">性别：</view>
-                <view class="value">{{roleInfo.sex}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">手机号：</view>
-                <view class="value">{{roleInfo.phone}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">住址：</view>
-                <view class="value">{{roleInfo.address}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">病史：</view>
-                <view class="value">{{roleInfo.history}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">过敏史：</view>
-                <view class="value">{{roleInfo.allergy}}</view>
-            </view>
-            <view class="line"></view>
-        </view>
+    <block wx:if="{{userRole == 1}}">
+        <patientInfo patientInfo="{{roleInfo}}"></patientInfo>
     </block>
-    <block wx:elif="{{userRole == 'doctor'}}">
-        <view class="infoList">
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">姓名：</view>
-                <view class="value">{{roleInfo.name}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">年龄：</view>
-                <view class="value">{{roleInfo.age}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">性别：</view>
-                <view class="value">{{roleInfo.sex}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">手机号：</view>
-                <view class="value">{{roleInfo.phone}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">科室：</view>
-                <view class="value">{{roleInfo.room}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">医龄：</view>
-                <view class="value">{{roleInfo.jobYear}}</view>
-            </view>
-            <view class="line"></view>
-            <view class='item'>
-                <view class="title">职位：</view>
-                <view class="value">{{roleInfo.position}}</view>
-            </view>
-            <view class="line"></view>
-                        <view class='item'>
-                <view class="title">单位：</view>
-                <view class="value">{{roleInfo.hospital}}</view>
-            </view>
-            <view class="line"></view>
-        </view>
+    <block wx:elif="{{userRole == 2}}">
+        <doctorInfo doctorInfo="{{roleInfo}}"></doctorInfo>
     </block>
     <navigator url="/pages/info/updateInfo/updateInfo" open-type="redirect">
         <button class="weui-btn" type="default">修改信息</button>

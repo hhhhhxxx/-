@@ -1,4 +1,7 @@
 // pages/data/data.js
+
+const app =  getApp();
+
 Page({
 
     /**
@@ -26,17 +29,17 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+
+        this.setData({
+            userRole: app.globalData.userRole,
+        })
+
         if (typeof this.getTabBar === 'function' && 
             this.getTabBar()) {
-            
-            const app =  getApp();
-            if(app.globalData.userRole == "patient") {
                 this.getTabBar().setData({
                     selected: 0,
                     list: app.globalData.tabBarList
                 })
-            }
-
         }
     },
 

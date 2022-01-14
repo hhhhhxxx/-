@@ -78,7 +78,7 @@ Page({
 
     changePatient () {
         app.globalData.tabBarList = patientTabBar
-        app.globalData.userRole = "patient"
+        app.globalData.userRole = 1
         wx.switchTab({
             url: '/pages/data/data',
         })
@@ -86,7 +86,7 @@ Page({
     // 商户
     changeDoctor () {
         app.globalData.tabBarList = doctorTabBar
-        app.globalData.userRole = "doctor"
+        app.globalData.userRole = 2
         wx.switchTab({
             url: '/pages/manage/manage',
         })

@@ -1,0 +1,25 @@
+<block wx:if="{{myPatientList.length > 0}}">
+    <view class="container">
+        <!-- <view class="tip">患者申请</view> -->
+        <block wx:for="{{myPatientList}}" wx:key="index">
+            <view bind:tap="toPatientInfo" data-item="{{item}}">
+                <view class="line"></view>
+                <view class="row">
+                    <image class="head" src="/pic/head.jpg" mode="widthFix" />
+                    <view class="text">
+                        <view class="name">{{item.name}}</view>
+                        <view class="intro">{{item.history}}</view>
+                    </view>
+                    <view class="operation">
+                        <button type="primary" bind:tap="agree" data-pid="{{item.id}}">同意</button>
+                        <button type="default" bind:tap="reject" data-pid="{{item.id}}">拒绝</button>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class="hr"></view>
+    </view>
+</block>
+<block wx:else>
+    <view class="tip">申请绑定为空</view>
+</block>

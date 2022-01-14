@@ -1,0 +1,61 @@
+.container {
+
+    .button {
+        background-color: var(--themeColor);
+        margin: 20rpx;
+        color: #fff;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+    .tip {
+        color: var(--grayText);
+        text-align: center;
+    }
+    .row{
+        display: flex;
+        font-size: 30rpx;
+        height: 130rpx;
+        align-items: center ;
+        position: relative;
+        padding: 0 40rpx;
+        
+        .head{
+            border-radius: 50%;
+            width: 110rpx;
+        }
+
+        .text{
+            margin-left: 30rpx;
+            .name{
+                max-width: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .intro{
+                color: var(--grayText);
+                max-width: 250px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+
+        .raw {
+            width: 40rpx;
+            position: absolute;
+            right: 30rpx;
+        }
+    }
+}
+
+.hr {
+	width: 100%;
+	height: 15px;
+	background-color: #f4f5f6;
+}
+
+.line {
+	border: 1px solid #ccc;
+	opacity: 0.2;
+}

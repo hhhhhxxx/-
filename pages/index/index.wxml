@@ -1,4 +1,14 @@
-<view class="we_form_wrap">
+<view class="we_form_wrap out">
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
     <mp-toptips msg="{{errorMsg}}" type="error" show="{{errorMsg}}" delay="1500"></mp-toptips>
     <view class="header">
         <image class="logo" src="/pic/logo.png" mode="widthFix" />
@@ -22,3 +32,4 @@
         </view>
     </mp-form>
 </view>
+

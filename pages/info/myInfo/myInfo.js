@@ -23,7 +23,6 @@ Page({
             roleInfo: {
                 ...wx.getStorageSync('roleInfo')
             }
-
         })
         // console.log("infojiazai ")
     },

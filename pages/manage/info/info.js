@@ -1,25 +1,91 @@
 // pages/manage/info/info.js
-Page({
+import { getRequest, postRequest } from '../../../request/index.js'
 
+const app = getApp();
+
+
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-    doctorInfo: []
+    doctorInfo: '',
+    patientId: '',
+    isConnect: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var doctorInfo = JSON.parse(options.doctorInfo)
-
     this.setData({
-        doctorInfo: doctorInfo 
+        userRole: app.globalData.userRole,
     })
 
+    let {id} = wx.getStorageSync('roleInfo')
+
+
+    if(this.data.userRole == 2) {
+        var patientInfo = JSON.parse(options.patientInfo)
+        this.setData({
+            patientInfo: patientInfo,
+            doctorId: id
+        })
+
+        // console.log(patientInfo)
+    } else if(this.data.userRole == 1) {
+        var doctorInfo = JSON.parse(options.doctorInfo)
+        this.setData({
+            doctorInfo: doctorInfo,
+            patientId: id
+        })
+
+        var that = this
+        getRequest('/connect/judgeIsConnect',{
+            doctorId: that.data.doctorInfo.id,
+            patientId: that.data.patientId,
+        }).then(res => {
+            if(res.data.code == 1) {
+                that.setData({
+                    isConnect: true
+                })
+            }
+        }).catch(res => {
+            if(res.data.code == 0) {
+                that.setData({
+                    isConnect: false
+                })
+            }
+        })
+    }
   },
 
+  apply() {
+    var that = this
+
+    getRequest('/connect/apply',{
+        doctorId: that.data.doctorInfo.id,
+        patientId: that.data.patientId,
+    }).then(res=>{
+        wx.showToast({
+            title: '申请成功',
+        })
+    })
+  },
+  cancel() {
+    var that = this
+    getRequest('/connect/cancel',{
+        doctorId: that.data.doctorInfo.id,
+        patientId: that.data.patientId,
+    }).then(res=>{
+        wx.showToast({
+            title: '取消成功',
+        })
+        that.setData({
+           isConnect: false 
+        })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

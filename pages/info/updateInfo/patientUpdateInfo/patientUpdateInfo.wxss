@@ -1,0 +1,16 @@
+.form_item {
+    font-weight: bolder;
+    display: flex;
+    color: #666666;
+    font-size: 30rpx;
+    padding: 12rpx;
+  }
+  .form_item input {
+    font-weight: normal;
+  }
+  .cell--weui-cell {
+    width: 100%;
+  }
+  .weui-label {
+    width: 136rpx;
+  }

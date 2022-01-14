@@ -1,6 +1,10 @@
 {
   "usingComponents": {
-    "SearchInput": "/components/SearchInput/SearchInput",
-    "doctorInfo": "/components/doctorInfo/doctorInfo"
-  }
+    "doctorInfo": "/components/doctorInfo/doctorInfo",
+    "patient-manage": "./patient-manage/patient-manage",
+    "doctor-manage": "./doctor-manage/doctor-manage"
+  },
+  "navigationBarTitleText": "管理",
+  "navigationBarBackgroundColor": "#00b0f0",
+  "navigationBarTextStyle": "white"
 }

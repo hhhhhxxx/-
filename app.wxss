@@ -1,17 +1,8 @@
 /**app.wxss**/
-/* @import "./style/iconfont.wxss"; */
+/* 图标字体 */
+@import "./style/iconfont.wxss";
 
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
-
-page,view,text,swiper,swiper-item,image,navigator {
+page,view,text,swiper,swiper-item,image,navigator,button {
     padding: 0;
     margin: 0;
     /* box-sizing: border-box; */
@@ -20,5 +11,11 @@ page,view,text,swiper,swiper-item,image,navigator {
 page{
   --otherColor: #4fa3d3;
   --themeColor: #00b0f0;
+  --grayText: rgb(105, 105, 105);
   font-size: 28rpx;
+}
+
+.blueBtn {
+    background-color: var(--themeColor);
+    color: #fff;
 }

@@ -1,29 +1,24 @@
-<view class="bg">
+<view class="bg sea">
+    <text class="wave"></text>
+    <text class="wave"></text>
+    <text class="wave"></text>
     <view class="head">
         <view class="headIcon">
             <image src="/pic/head.jpg" mode="widthFix"></image>
         </view>
-        <view class="username">小建瓯i</view>
+        <view class="username">{{name}}</view>
     </view>
-    <!-- <button class="button" open-type="getUserInfo" wx:if="{{hasUserInfo}}" bindgetuserinfo="doAuthorization">
-        微信登录 
-    </button> -->
 </view>
-
 <view class="hr"></view>
-
 <navigator url="/pages/info/myInfo/myInfo">
     <view class='item'>
         <view class="title">我的信息</view>
     </view>
 </navigator>
-
 <view class="line"></view>
-
 <navigator url="/pages/index/index">
     <view class='item'>
         <view class="title" bindtap="loginout">退出登录</view>
     </view>
 </navigator>
-
 <view class="hr"></view>

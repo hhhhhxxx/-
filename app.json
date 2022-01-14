@@ -8,6 +8,8 @@
     "pages/info/info",
     "pages/manage/manage",
     "pages/manage/info/info",
+    "pages/manage/doctor-manage/apply/apply",
+    "pages/manage/patient-manage/myDoctor/myDoctor",
     "pages/test/test",
     "pages/data/heartRate/heartRate",
     "pages/data/stepNumber/stepNumber",

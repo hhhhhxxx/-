@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "doctorInfo": "/components/doctorInfo/doctorInfo",
+    "patientInfo": "/components/patientInfo/patientInfo"
+  }
 }

@@ -3,6 +3,9 @@
     "mp-form": "weui-miniprogram/form/form",
     "mp-cells": "weui-miniprogram/cells/cells",
     "mp-cell": "weui-miniprogram/cell/cell",
-    "mp-toptips": "weui-miniprogram/toptips/toptips"
+    "mp-toptips": "weui-miniprogram/toptips/toptips",
+
+    "doctorUpdateInfo": "./doctorUpdateInfo/doctorUpdateInfo",
+    "patientUpdateInfo": "./patientUpdateInfo/patientUpdateInfo"
   }
 }

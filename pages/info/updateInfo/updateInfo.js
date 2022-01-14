@@ -9,9 +9,7 @@ Page({
      */
     data: {
         userRole: '',
-        roleForm: {
-
-        },
+        roleInfo: {},
         errorMsg: '', // 验证表单显示错误信息
         patientRules: [
             {
@@ -78,69 +76,13 @@ Page({
             }
         ]
     },
-
-    formInputChange (e) {
-        const { field } = e.currentTarget.dataset
-        this.setData({
-            [`roleForm.${field}`]: e.detail.value
-        })
-    },
-
-    submitForm () {
-
-        this.selectComponent('#form').validate((valid, errors) => {
-            if (!valid) {
-                const firstError = Object.keys(errors)
-                if (firstError.length) {
-                    this.setData({
-                        errorMsg: errors[firstError[0]].message
-                    })
-                }
-            } else {
-
-                if (this.data.userRole == 'patient') {
-
-                    postRequest('/patient/update', this.data.roleForm)
-                        .then(res => {
-                            wx.setStorageSync('roleInfo', res.data.data.patient);
-
-                            wx.navigateTo({
-                                url: '/pages/info/myInfo/myInfo',
-                            });
-                        })
-                } else if (this.data.userRole == 'doctor') {
-                    postRequest('/doctor/update', this.data.roleForm)
-                        .then(res => {
-                            wx.setStorageSync('roleInfo', res.data.data.doctor);
-
-                            // wx.navigateTo({
-                            //     url: '/pages/info/myInfo/myInfo',
-                            // });
-                            wx.redirectTo({
-                                url: '/pages/info/myInfo/myInfo',
-
-                            });
-                            // wx.navigateBack({
-                            //     delta: 1//默认值是1，返回的页面数，如果 delta 大于现有页面数，则返回到首页。
-                            // })
-                        }).catch(res => {
-                            wx.redirectTo({
-                                url: '/pages/info/myInfo/myInfo',
-
-                            });
-                        })
-                }
-            }
-        })
-    },
-
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         this.setData({
             userRole: app.globalData.userRole,
-            roleForm: {
+            roleInfo: {
                 ...wx.getStorageSync("roleInfo")
             }
         })

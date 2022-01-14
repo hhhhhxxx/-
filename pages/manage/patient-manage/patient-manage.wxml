@@ -1,0 +1,23 @@
+<view class="container">
+    <mp-searchbar class="searchBar" bindselectresult="selectResult" search="{{search}}" 
+    bindtap="focus" bindcancel="cancel"></mp-searchbar>
+    <view hidden="{{!isShowMyDoctor}}">
+        <view class="tip">我的医生</view>
+        <view>
+            <view wx:for="{{myDoctorList}}" wx:key="index">
+                <view bind:tap="toDoctorInfo" data-item="{{item}}">
+                    <view class="line"></view>
+                    <view class="row">
+                        <image class="head" src="/pic/head.jpg" mode="widthFix" />
+                        <view class="text">
+                            <view class="name">{{item.name}}</view>
+                            <view class="intro">{{item.room}}</view>
+                        </view>
+                        <image class="raw" src="/icons/raw.png" mode="widthFix" />
+                    </view>
+                </view>
+            </view>
+            <view class="hr"></view>
+        </view>
+    </view>
+</view>

@@ -1,4 +1,5 @@
 {
+  "component": true,
   "usingComponents": {
     "mp-form": "weui-miniprogram/form/form",
     "mp-cells": "weui-miniprogram/cells/cells",

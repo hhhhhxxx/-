@@ -1,84 +1,54 @@
 import { getRequest, postRequest } from '../../request/index.js'
+
+const app = getApp();
+
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        doctorList: [],
-        patientList: []
+        userRole: '',
+        id: ''
     },  
 
-
-    searchDoctorList(e) {
-        console.log(e.detail.inputText)
-
-        getRequest('/doctor/getByName',{
-          name:  e.detail.inputText == undefined ? '' : e.detail.inputText
-        }).then(res=>{
-            this.setData({
-                doctorList: res.data.data.doctorList
-            })
-        })
-
-    },
-
+    
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         
-        const app = getApp();
+        let {id} = wx.getStorageSync('roleInfo')
+
         this.setData({
-            userRole:  app.globalData.userRole
+            userRole: app.globalData.userRole,
+            id: id
         })
-
-        getRequest('/doctor/getByName',{
-            name:  ''
-          }).then(res=>{
-              this.setData({
-                  doctorList: res.data.data.doctorList
-              })
-          })
+        // console.log('登录角色',this.data.userRole)
     },
-
-    toDoctorInfo(e) {
-        let doctorInfo = e.currentTarget.dataset.item;
-
-        // console.log( doctorInfo)
-
-        wx.navigateTo({
-            url: `/pages/manage/info/info?doctorInfo=${JSON.stringify(doctorInfo)}`
-        });
-        // url="/pages/manage/info/info?doctorInfo={{JSON.stringify(item)}}"
-    },
-
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        // console.log('ready')
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        if (typeof this.getTabBar === 'function' &&
-            this.getTabBar()) {
+        // console.log('show')
+        this.setData({
+            userRole: app.globalData.userRole,
+        })
 
-            const app = getApp();
-            if (app.globalData.userRole == "patient") {
+        if (typeof this.getTabBar === 'function' && 
+            this.getTabBar()) {
                 this.getTabBar().setData({
                     selected: 2,
                     list: app.globalData.tabBarList
                 })
-            } else if (app.globalData.userRole == "doctor") {
-                this.getTabBar().setData({
-                    selected: 0,
-                    list: app.globalData.tabBarList
-                })
-            }
         }
     },
 

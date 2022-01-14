@@ -1,0 +1,35 @@
+<mp-form class="form" rules="{{doctorRules}}" models="{{doctorInfo}}">
+    <mp-cells>
+        <mp-cell class="form_item" prop="name" title="姓名：">
+            <input bindinput="formInputChange" bindfail="tip" value="{{doctorInfo.name}}" data-field="name" class="weui-input" placeholder="输入姓名" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="age" title="年龄：">
+            <input bindinput="formInputChange" bindfail="tip" value="{{doctorInfo.age}}" data-field="age" class="weui-input" placeholder="输入年龄" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="sex" title="性别：">
+            <input bindinput="formInputChange" bindfail="tip" value="{{doctorInfo.sex}}" data-field="sex" class="weui-input" placeholder="输入性别" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="phone" title="手机号：">
+            <input bindinput="formInputChange" bindfail="tip" value="{{doctorInfo.phone}}" data-field="phone" class="weui-input" placeholder="输入手机号" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="room" title="科室：">
+            <input bindinput="formInputChange" bindfail="tip" value="{{doctorInfo.room}}" data-field="room" class="weui-input" placeholder="输入科室" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="jobYear" title="医龄：">
+            <input bindinput="formInputChange" bindfail="tip" value="{{doctorInfo.jobYear}}" data-field="jobYear" class="weui-input" placeholder="输入医龄" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="position" title="职位：">
+            <input bindinput="formInputChange" bindfail="tip" value="{{doctorInfo.position}}" data-field="position" class="weui-input" placeholder="输入" />
+        </mp-cell>
+        <mp-cell class="form_item" prop="hospital" title="单位：">
+            <input bindinput="formInputChange" bindfail="tip" value="{{doctorInfo.hospital}}" data-field="hospital" class="weui-input" placeholder="输入过敏史" />
+        </mp-cell>
+    </mp-cells>
+    <!-- 提交按钮 -->
+    <view class="submit_btn_wrap">
+        <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+    </view>
+</mp-form>
+<navigator url="/pages/info/myInfo/myInfo">
+    <button class="weui-btn" type="default">返回</button>
+</navigator>

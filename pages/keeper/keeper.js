@@ -1,4 +1,5 @@
-// pages/keeper/keeper.js
+const app =  getApp();// pages/keeper/keeper.js
+
 Page({
 
     /**
@@ -29,21 +30,16 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        if (typeof this.getTabBar === 'function' &&
-            this.getTabBar()) {
+        this.setData({
+            userRole: app.globalData.userRole,
+        })
 
-            const app = getApp();
-            if (app.globalData.userRole == "patient") {
+        if (typeof this.getTabBar === 'function' && 
+            this.getTabBar()) {
                 this.getTabBar().setData({
                     selected: 1,
                     list: app.globalData.tabBarList
                 })
-            } else if(app.globalData.userRole == "doctor") {
-                this.getTabBar().setData({
-                    selected: 1,
-                    list: app.globalData.tabBarList
-                })
-            }
         }
     },
 
